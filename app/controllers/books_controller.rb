@@ -14,13 +14,22 @@ class BooksController < ApplicationController
   #   @book = Book.find(params[:id])
   # end
 
-  def show
-    @book = Book.find(params[:id])
-    render :show
-  end
+  # def show
+  #   @book = Book.find(params[:id])
+  #   render :show
+  # end
 
   # renderの省略
   # def show
   #   @book = Book.find(params[:id])
   # end
+
+  # コンテンツのタイプによって表示を出し分ける
+  def show
+    @book = Book.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.csv
+    end
+  end
 end
