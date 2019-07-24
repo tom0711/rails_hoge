@@ -25,11 +25,19 @@ class BooksController < ApplicationController
   # end
 
   # コンテンツのタイプによって表示を出し分ける
+  # def show
+  #   @book = Book.find(params[:id])
+  #   respond_to do |format|
+  #     format.html
+  #     format.csv
+  #   end
+  # end
+
+  # jbuilder
   def show
     @book = Book.find(params[:id])
     respond_to do |format|
-      format.html
-      format.csv
+      format.json
     end
   end
 end
