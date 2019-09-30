@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :fugas
   get 'profile/show'
   get 'profile/edit'
   get 'profile/update'

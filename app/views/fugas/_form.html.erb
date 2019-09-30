@@ -1,0 +1,17 @@
+<%= form_with(model: fuga, local: true) do |form| %>
+  <% if fuga.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fuga.errors.count, "error") %> prohibited this fuga from being saved:</h2>
+
+      <ul>
+      <% fuga.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
